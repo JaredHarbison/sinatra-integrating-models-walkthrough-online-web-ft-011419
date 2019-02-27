@@ -19,13 +19,13 @@ class TextAnalyzer
   end
 
   def most_used_letter
-    sl = text.gsub(/[^a-z]/, '')
-    arr = sl.split('')
+    s1 = text.gsub(/[^a-z]/, '') # gets rid of spaces
+    arr = s1.split('')
     arr1 = arr.uniq
     arr2 = {}
 
-    arrl.map do |c|
-      arr2[c] = arr.count(c)
+    arr1.map do |c|
+      arr2[c] =  arr.count(c)
     end
 
     biggest = { arr2.keys.first => arr2.values.first }
@@ -36,6 +36,7 @@ class TextAnalyzer
         biggest[key] = value
       end
     end
+
     biggest
   end
-end 
+end
